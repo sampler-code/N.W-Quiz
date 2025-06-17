@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Edge Computing Quiz</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Pacifico&display=swap');
 
   body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(135deg, #fce4ec, #f3e5f5);
     font-family: 'Inter', sans-serif;
-    color: #e0e6f0;
+    color: #5a3e58;
     margin: 0;
     padding: 2rem;
     min-height: 100vh;
@@ -22,8 +22,10 @@
 
   h1 {
     margin-bottom: 2rem;
-    color: #4ade80;
-    text-shadow: 0 0 10px #4ade80;
+    color: #ec407a;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 0 0 10px #f06292aa;
+    font-size: 2.5rem;
   }
 
   .quiz-container {
@@ -32,18 +34,19 @@
   }
 
   .card {
-    background: #1f2937;
-    border-radius: 12px;
+    background: #fff0f6;
+    border-radius: 16px;
     margin-bottom: 1.5rem;
     padding: 1.5rem 2rem;
-    box-shadow: 0 0 15px #2563eb44;
+    box-shadow: 0 5px 20px rgba(240, 98, 146, 0.2);
+    border: 2px solid #f8bbd0;
   }
 
   .question-text {
     font-weight: 600;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #4ade80;
+    color: #ab47bc;
   }
 
   .options {
@@ -55,22 +58,23 @@
 
   label {
     cursor: pointer;
-    background: #374151;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
+    background: #fce4ec;
+    padding: 0.7rem 1.1rem;
+    border-radius: 10px;
     transition: background-color 0.3s ease;
     user-select: none;
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    border: 1px solid #f8bbd0;
   }
 
   label:hover {
-    background: #2563ebaa;
+    background: #f8bbd0;
   }
 
   input[type="radio"] {
-    accent-color: #4ade80;
+    accent-color: #ec407a;
     cursor: pointer;
   }
 
@@ -81,157 +85,105 @@
   }
 
   .feedback.correct {
-    color: #22c55e; /* green */
+    color: #66bb6a;
   }
 
   .feedback.incorrect {
-    color: #ef4444; /* red */
+    color: #ef5350;
   }
 
   .correct-answer {
     margin-top: 0.5rem;
     font-style: italic;
-    color: #94a3b8;
+    color: #7b1fa2;
     display: none;
   }
 
-  /* Edge Computing icon and style */
   .header-icon {
-    margin-bottom: 1rem;
-    font-size: 4rem;
-    color: #4ade80;
-    animation: pulse 2.5s infinite ease-in-out;
-    user-select: none;
+    margin-left: 0.5rem;
+    font-size: 2.5rem;
+    animation: sparkle 2s infinite ease-in-out;
   }
 
-  @keyframes pulse {
-    0%, 100% {
-      text-shadow: 0 0 5px #4ade80;
-    }
-    50% {
-      text-shadow: 0 0 20px #4ade80;
-    }
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.1); }
   }
 </style>
 </head>
 <body>
 
-<h1>Edge Computing Quiz <span class="header-icon">⚡🖥️</span></h1>
+<h1>Edge Computing Quiz <span class="header-icon">⚡🖥️ </span></h1>
 
 <div class="quiz-container">
 
+  <!-- Q1 -->
   <div class="card" role="region" aria-labelledby="q1">
     <div id="q1" class="question-text">
       1. What is the main advantage of edge computing compared to traditional cloud computing?
     </div>
     <form>
       <div class="options">
-        <label>
-          <input type="radio" name="q1" value="a" />
-          a) Cheaper hardware
-        </label>
-        <label>
-          <input type="radio" name="q1" value="b" />
-          b) Lower latency and faster response times
-        </label>
-        <label>
-          <input type="radio" name="q1" value="c" />
-          c) More complex data centers
-        </label>
-        <label>
-          <input type="radio" name="q1" value="d" />
-          d) Larger storage capacity
-        </label>
+        <label><input type="radio" name="q1" value="a" /> a) Cheaper hardware</label>
+        <label><input type="radio" name="q1" value="b" /> b) Lower latency and faster response times</label>
+        <label><input type="radio" name="q1" value="c" /> c) More complex data centers</label>
+        <label><input type="radio" name="q1" value="d" /> d) Larger storage capacity</label>
       </div>
       <div class="feedback" aria-live="polite"></div>
       <div class="correct-answer"></div>
     </form>
   </div>
 
+  <!-- Q2 -->
   <div class="card" role="region" aria-labelledby="q2">
     <div id="q2" class="question-text">
       2. Which of the following is NOT typically considered part of edge computing infrastructure?
     </div>
     <form>
       <div class="options">
-        <label>
-          <input type="radio" name="q2" value="a" />
-          a) Edge nodes
-        </label>
-        <label>
-          <input type="radio" name="q2" value="b" />
-          b) Gateways
-        </label>
-        <label>
-          <input type="radio" name="q2" value="c" />
-          c) Centralized cloud servers
-        </label>
-        <label>
-          <input type="radio" name="q2" value="d" />
-          d) IoT devices
-        </label>
+        <label><input type="radio" name="q2" value="a" /> a) Edge nodes</label>
+        <label><input type="radio" name="q2" value="b" /> b) Gateways</label>
+        <label><input type="radio" name="q2" value="c" /> c) Centralized cloud servers</label>
+        <label><input type="radio" name="q2" value="d" /> d) IoT devices</label>
       </div>
       <div class="feedback" aria-live="polite"></div>
       <div class="correct-answer"></div>
     </form>
   </div>
 
+  <!-- Q3 -->
   <div class="card" role="region" aria-labelledby="q3">
     <div id="q3" class="question-text">
       3. Which real-world application commonly uses edge computing to process data locally for quick decision-making?
     </div>
     <form>
       <div class="options">
-        <label>
-          <input type="radio" name="q3" value="a" />
-          a) Email services
-        </label>
-        <label>
-          <input type="radio" name="q3" value="b" />
-          b) Autonomous vehicles
-        </label>
-        <label>
-          <input type="radio" name="q3" value="c" />
-          c) Online banking websites
-        </label>
-        <label>
-          <input type="radio" name="q3" value="d" />
-          d) Social media platforms
-        </label>
+        <label><input type="radio" name="q3" value="a" /> a) Email services</label>
+        <label><input type="radio" name="q3" value="b" /> b) Autonomous vehicles</label>
+        <label><input type="radio" name="q3" value="c" /> c) Online banking websites</label>
+        <label><input type="radio" name="q3" value="d" /> d) Social media platforms</label>
       </div>
       <div class="feedback" aria-live="polite"></div>
       <div class="correct-answer"></div>
     </form>
   </div>
 
+  <!-- Q4 -->
   <div class="card" role="region" aria-labelledby="q4">
     <div id="q4" class="question-text">
       4. What is one of the biggest challenges facing the future of edge computing?
     </div>
     <form>
       <div class="options">
-        <label>
-          <input type="radio" name="q4" value="a" />
-          a) Unlimited bandwidth availability
-        </label>
-        <label>
-          <input type="radio" name="q4" value="b" />
-          b) Managing and securing a large number of distributed devices
-        </label>
-        <label>
-          <input type="radio" name="q4" value="c" />
-          c) Lack of interest from companies
-        </label>
-        <label>
-          <input type="radio" name="q4" value="d" />
-          d) Slow growth of IoT devices
-        </label>
+        <label><input type="radio" name="q4" value="a" /> a) Unlimited bandwidth availability</label>
+        <label><input type="radio" name="q4" value="b" /> b) Managing and securing a large number of distributed devices</label>
+        <label><input type="radio" name="q4" value="c" /> c) Lack of interest from companies</label>
+        <label><input type="radio" name="q4" value="d" /> d) Slow growth of IoT devices</label>
       </div>
       <div class="feedback" aria-live="polite"></div>
       <div class="correct-answer"></div>
     </form>
   </div>
-
 </div>
 
 <script>
